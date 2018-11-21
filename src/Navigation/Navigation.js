@@ -24,7 +24,20 @@ class Navigation extends React.Component {
                     open={this.state.isDrawerOpen}
                     onRequestChange={this.toggleDrawer}
                 >
-                    {this.props.children}
+                    {this.props.children ?
+                        this.props.children.map ?
+                            this.props.children.map(child => (
+                                React.cloneElement(
+                                    child,
+                                    { onClick: this.toggleDrawer }
+                                )
+                            ))
+                            : React.cloneElement(
+                                this.props.children,
+                                { onClick: this.toggleDrawer }
+                            )
+                        : null
+                    }
                 </Drawer>
             </div>
         )
