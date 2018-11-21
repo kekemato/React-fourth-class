@@ -1,16 +1,14 @@
 import React from 'react'
-import Button from './Button.js'
+
+import Paper from './components/Paper'
+import Counter from'./components/Counter'
 
 const App = (props) => (
-  <div>
-    <Button
-      onClick={() => alert("Clicked")}
+  <Paper>
+    <Counter
+    startNumber={0}
     />
-
-    <Button
-      onClick={() => alert("Woohoo")}
-    />
-  </div>
+  </Paper>
 )
 
 export default App
