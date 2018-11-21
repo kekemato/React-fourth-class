@@ -4,15 +4,12 @@ import React from 'react'
 import Button from './Button'
 
 class Counter extends React.Component {
-    constructor(props) {
-        super()
 
-        this.state = {
-            number: props.startNumber
-        }
+    state = {
+            number: this.props.startNumber
     }
 
-    incHandler() {
+    incHandler = () => {
         this.setState({ number: this.state.number + 1 })
     }
 
@@ -24,7 +21,7 @@ class Counter extends React.Component {
                 </h1>
                 <Button
                     label={'+'}
-                    onClick={() => this.incHandler()}
+                    onClick={this.incHandler}
                 />
 
                 <Button
