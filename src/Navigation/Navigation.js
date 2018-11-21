@@ -8,7 +8,7 @@ class Navigation extends React.Component {
         isDrawerOpen: false
     }
 
-    toggleDrawer = () => this.setState({isDrawerOpen: !this.state.isDrawerOpen})
+    toggleDrawer = () => this.setState({ isDrawerOpen: !this.state.isDrawerOpen })
 
     render() {
         return (
@@ -24,6 +24,7 @@ class Navigation extends React.Component {
                     open={this.state.isDrawerOpen}
                     onRequestChange={this.toggleDrawer}
                 >
+                    {this.props.children}
                 </Drawer>
             </div>
         )

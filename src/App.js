@@ -6,19 +6,16 @@ import Navigation from './Navigation/Navigation'
 
 const App = (props) => (
   <div>
-    <Navigation
-      title="ePla"
-    />
     <Router>
       <div>
+      <Navigation title="ePla">
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/counter'>Counter</Link></li>
+        </ul>
+    </Navigation>
         <div>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/counter'>Counter</Link></li>
-          </ul>
-        </div>
-        <div>
-          <Route path="/counter" component={() => <Counter startNumber={5}/>} />
+          <Route path="/counter" component={() => <Counter startNumber={5} />} />
         </div>
       </div>
     </Router>
