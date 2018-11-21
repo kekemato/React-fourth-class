@@ -3,21 +3,31 @@ import React from 'react'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 
-const Navigation = (props) => (
-    <div>
-        <AppBar
-            title="ePla"
-            onLeftIconButtonClick={() => alert("clicked!")}
-        />
+class Navigation extends React.Component {
+    state = {
+        isDrawerOpen: false
+    }
 
-        <Drawer
-            docked={false}
-            width={200}
-            open={true}
-            onRequestChange={(open) => console.log(open)}
-        >
-        </Drawer>
-    </div>
-)
+    toggleDrawer = () => this.setState({isDrawerOpen: !this.state.isDrawerOpen})
+
+    render() {
+        return (
+            <div>
+                <AppBar
+                    title="ePla"
+                    onLeftIconButtonClick={this.toggleDrawer}
+                />
+
+                <Drawer
+                    docked={false}
+                    width={200}
+                    open={this.state.isDrawerOpen}
+                    onRequestChange={this.toggleDrawer}
+                >
+                </Drawer>
+            </div>
+        )
+    }
+}
 
 export default Navigation
